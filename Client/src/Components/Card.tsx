@@ -1,22 +1,21 @@
-export default function Card(obj) {
-    return (
-        <div className="flex flex-row justify-evenly lg:justify-center items-center border-2 h-56 my-3 w-[94%] mx-auto rounded-lg shadow-md max-w-screen-lg px-4 gap-8 lg:gap-0">
-            <div className="flex flex-col justify-center items-center w-1/2">
-                <img src={obj.img} alt="Random Image" className="w-40 h-40 rounded-full mt-4 ring-4 object-cover ring-green-500" />
-            </div>
-            <div className="flex flex-col justify-between items-start text-slate-800 w-1/2 lg:-ml-10">
-                <h1 className={'text-2xl font-black ' + obj.color}>{obj.Position}<sup>{obj.sup}</sup> Position</h1>
-                <h1 className="text-lg font-bold">{obj.name}</h1>
-                <h1 className="font-semibold">Student ID : {obj.id}</h1>
-                <h1 className="font-semibold">Section : {obj.Section}</h1>
-            </div>
-        </div>
-    );
+export default function Card({ img, name, Position, id, Section, sup, color }) {
+  return (
+    <div className="flex flex-col lg:flex-row items-center border border-gray-300 h-auto lg:h-56 my-6 w-full mx-auto rounded-lg shadow-lg max-w-5xl px-6 py-4 bg-white gap-6">
+      
+      {/* Image Section */}
+      <div className="flex justify-center items-center w-full lg:w-1/3">
+        <img src={img} alt={name} className="w-32 h-32 lg:w-40 lg:h-40 rounded-full ring-4 object-cover ring-green-500" />
+      </div>
 
-}
-Card.defaultProps = {
-    name: "John Doe",
-    Position: "1",
-    id: "123456789",
-    Section: "A"
+      {/* Text Section */}
+      <div className="flex flex-col justify-center items-start w-full lg:w-2/3 text-center lg:text-left">
+        <h1 className={`text-2xl font-bold mb-2 ${color}`}>
+          {Position}<sup>{sup}</sup> Position
+        </h1>
+        <h2 className="text-lg font-semibold text-gray-800 mb-1">{name}</h2>
+        <p className="text-gray-600 mb-1">Student ID: {id}</p>
+        <p className="text-gray-600">Section: {Section}</p>
+      </div>
+    </div>
+  );
 }
