@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 import Navbar from './Components/navbar.tsx';
 import Center from './Components/center.tsx';
 import Winner from './Components/winners.tsx';
@@ -12,15 +12,14 @@ import './index.css';
 
 function DefaultLayout() {
   const location = useLocation();
-
-  // Determine if Winner should be rendered
-  const shouldRenderDefault = location.pathname !== '/Participant' && location.pathname !== '/Volunteers';
+  const isDefaultRoute = location.pathname === '/' || location.pathname === '/';
 
   return (
     <>
       <Navbar />
       <Center />
-      {shouldRenderDefault && <Winner />}
+      {isDefaultRoute && <Winner />}
+      <Outlet />
       <Footer />
     </>
   );
@@ -30,10 +29,13 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
+        <Route index element={<div />} /> {/* Default route */}
         <Route path="Participant" element={<ParticipantPage />} />
         <Route path="Volunteers" element={<Volunteers />} />
         {/* Add other routes here as needed */}
       </Route>
+      {/* Catch-all route for unmatched paths */}
+      <Route path="*" element={<div>Page Not Found</div>} />
     </Routes>
   );
 }
