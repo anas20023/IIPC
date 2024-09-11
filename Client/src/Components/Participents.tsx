@@ -12,7 +12,7 @@ const PT = () => {
                 const response = await fetch('https://iipc-5djy.vercel.app/api/participants');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
-                console.log(data);
+                //console.log(data);
                 setParticipants(data);
             } catch (error) {
                 setError(error.message);
