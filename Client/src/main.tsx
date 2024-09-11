@@ -30,7 +30,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route index element={<div />} /> {/* Default content */}
         <Route path="Participant" element={<ParticipantPage />} />
         <Route path="Volunteers" element={<Volunteers />} />
         {/* Add other routes here as needed */}
