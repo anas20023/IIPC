@@ -6,7 +6,6 @@ import Navbar from './Components/navbar.tsx';
 import Center from './Components/center.tsx';
 import Winner from './Components/winners.tsx';
 import Footer from './Components/footer.tsx';
-import DF from './Components/Default.tsx';
 import ParticipantPage from './Components/Participents.tsx';
 import Volunteers from './Components/Volunteers.tsx';
 import './index.css';
@@ -23,7 +22,7 @@ function App() {
       <Center />
       {shouldRenderDefault && <Winner />}
       <Routes>
-        <Route path="/" element={<DF />} /> {/* Default route */}
+        <Route path="/" element={shouldRenderDefault} /> {/* Default route */}
         <Route path="/Participant" element={<ParticipantPage />} />
         <Route path="/Volunteers" element={<Volunteers />} />
         {/* Add other routes here as needed */}
