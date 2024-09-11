@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes, Outlet, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './Components/navbar.tsx';
 import Center from './Components/center.tsx';
 import Winner from './Components/winners.tsx';
@@ -21,7 +21,6 @@ function DefaultLayout() {
       <Navbar />
       <Center />
       {shouldRenderDefault && <Winner />}
-      <Outlet />
       <Footer />
     </>
   );
