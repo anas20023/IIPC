@@ -27,7 +27,7 @@ const AboutUs = ({ visible, onClose }) => {
                 >
                     {/* Header */}
                     <div className="flex justify-between items-center p-4 border-b">
-                        <h2 className="text-xl font-semibold">About Us</h2>
+                        <h2 className="text-xl font-semibold">About Intake 52</h2>
                         <div className="flex space-x-2">
                             {/* Maximize Button */}
                             <button
