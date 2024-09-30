@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowMaximize, faWindowRestore, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const AboutUs = ({ visible, onClose }) => {
     const [isMaximized, setIsMaximized] = useState(false);
@@ -21,7 +23,7 @@ const AboutUs = ({ visible, onClose }) => {
         visible && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
                 <div
-                    className={`relative bg-white rounded-lg shadow-lg transition-all ${isMaximized ? 'w-full h-full' : 'w-1/2'
+                    className={`relative bg-white rounded-lg shadow-lg transition-all ${isMaximized ? 'w-full h-full mx-6' : 'w-11/12 md:w-3/4 lg:w-1/2'
                         }`}
                     style={{ maxHeight: '90vh' }}
                 >
@@ -29,21 +31,21 @@ const AboutUs = ({ visible, onClose }) => {
                     <div className="flex justify-between items-center p-4 border-b">
                         <h2 className="text-xl font-semibold">About Intake 52</h2>
                         <div className="flex space-x-2">
-                            {/* Maximize Button */}
+                            {/* Maximize/Restore Button */}
                             <button
-                                className="text-gray-500 hover:text-gray-700"
+                                className="text-gray-500 hover:text-gray-700 mr-2 text-md"
                                 onClick={toggleMaximize}
                                 title="Maximize/Restore"
                             >
-                                {isMaximized ? '🔽' : '🗖'}
+                                <FontAwesomeIcon icon={isMaximized ? faWindowRestore : faWindowMaximize} />
                             </button>
                             {/* Close Button */}
                             <button
-                                className="text-gray-500 hover:text-gray-700"
+                                className="text-gray-500 hover:text-gray-700 text-md"
                                 onClick={onClose}
                                 title="Close"
                             >
-                                ✖️
+                                <FontAwesomeIcon icon={faTimes} />
                             </button>
                         </div>
                     </div>
