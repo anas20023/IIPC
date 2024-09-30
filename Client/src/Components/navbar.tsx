@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="relative w-full bg-white shadow-sm">
+    <nav className="relative w-full bg-white shadow-md">
       <div className="flex justify-between items-center max-w-7xl w-11/12 mx-auto py-4">
         {/* Left section */}
         <h1 className="text-3xl font-bold text-slate-800 cursor-pointer" onClick={handleClick}>
@@ -22,7 +22,7 @@ export default function Navbar() {
 
         {/* Menu Button for Small Screens */}
         <button
-          className="md:hidden text-blue-600 focus:outline-none"
+          className="md:hidden text-slate-700 focus:outline-none"
           onClick={toggleMenu}
         >
           <svg
@@ -43,21 +43,21 @@ export default function Navbar() {
 
         {/* Menu Items for Large Screens */}
         <div className="hidden md:flex flex-row items-center space-x-6">
-        <Link
+          <Link
             to="/"
-            className="text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded transition-all shadow-sm"
+            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
           >
             Home
           </Link>
           <Link
             to="/Participant"
-            className="text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded transition-all shadow-sm"
+            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
           >
             Participants
           </Link>
           <Link
-            to="Volunteers"
-            className="text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded transition-all shadow-sm"
+            to="/Volunteers"
+            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
           >
             Volunteers
           </Link>
@@ -68,24 +68,24 @@ export default function Navbar() {
       <div
         className={`absolute top-16 right-0 w-48 bg-white shadow-lg rounded-lg ${isOpen ? 'block' : 'hidden'} md:hidden z-50`}
       >
-         <Link
+        <Link
           to="/"
-          className="block text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2 transition-all shadow-sm"
-          onClick={() => setIsOpen(false)} // Close menu on click
+          className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+          onClick={() => setIsOpen(false)}
         >
           Home
         </Link>
         <Link
           to="/Participant"
-          className="block text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2  transition-all shadow-sm"
-          onClick={() => setIsOpen(false)} // Close menu on click
+          className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+          onClick={() => setIsOpen(false)}
         >
           Participants
         </Link>
         <Link
-          to="Volunteers"
-          className="block text-lg font-normal text-white bg-blue-600 hover:bg-blue-500 px-4 py-2  transition-all shadow-sm"
-          onClick={() => setIsOpen(false)} // Close menu on click
+          to="/Volunteers"
+          className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+          onClick={() => setIsOpen(false)}
         >
           Volunteers
         </Link>
@@ -99,5 +99,5 @@ export default function Navbar() {
         />
       )}
     </nav>
-  );
+  ); 
 }

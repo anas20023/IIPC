@@ -12,14 +12,14 @@ import './index.css';
 
 function DefaultLayout() {
   const location = useLocation();
-  const isDefaultRoute = location.pathname === '/' || location.pathname === '/';
+  const isDefaultRoute = location.pathname === '/'; // Ensures the default route condition is handled
 
   return (
     <>
       <Navbar />
       <Center />
-      {isDefaultRoute && <Winner />}
-      <Outlet />
+      {isDefaultRoute && <Winner />} {/* Display Winner component only on the default route */}
+      <Outlet /> {/* This will render child routes */}
       <Footer />
     </>
   );
@@ -29,13 +29,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route index element={<div />} /> {/* Default route */}
+        <Route index element={<div />} /> {/* Empty element for the default route */}
         <Route path="Participant" element={<ParticipantPage />} />
         <Route path="Volunteers" element={<Volunteers />} />
-        {/* Add other routes here as needed */}
+        {/* Other routes can be added here as needed */}
       </Route>
-      {/* Catch-all route for unmatched paths */}
-      <Route path="*" element={<div>Page Not Found</div>} />
     </Routes>
   );
 }
