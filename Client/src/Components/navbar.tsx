@@ -42,12 +42,18 @@ export default function Navbar() {
         </button>
 
         {/* Menu Items for Large Screens */}
-        <div className="hidden md:flex flex-row items-center space-x-6">
+        <div className="hidden md:flex flex-row items-center space-x-4">
           <Link
             to="/"
             className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
           >
             Home
+          </Link>
+          <Link
+            to="/aboutus"
+            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
+          >
+            About us
           </Link>
           <Link
             to="/Participant"
@@ -59,7 +65,7 @@ export default function Navbar() {
             to="/Volunteers"
             className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
           >
-            Volunteers
+            Organizers
           </Link>
         </div>
       </div>
@@ -76,6 +82,13 @@ export default function Navbar() {
           Home
         </Link>
         <Link
+          to="/aboutus"
+          className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+          onClick={() => setIsOpen(false)}
+        >
+          About us
+        </Link>
+        <Link
           to="/Participant"
           className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
           onClick={() => setIsOpen(false)}
@@ -87,7 +100,7 @@ export default function Navbar() {
           className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
           onClick={() => setIsOpen(false)}
         >
-          Volunteers
+          Organizers
         </Link>
       </div>
 
@@ -99,5 +112,5 @@ export default function Navbar() {
         />
       )}
     </nav>
-  ); 
+  );
 }

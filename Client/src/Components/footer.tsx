@@ -7,7 +7,7 @@ export default function Footer() {
           <br />
           <span
             className="cursor-pointer hidden lg:inline-block text-[10px] font-light hover:underline"
-            onClick={() => window.location.href = 'https://github.com/anas20023'}
+            onClick={() => window.location.href = 'https://www.facebook.com/remain52'}
           >
             Developed By Remain 52
           </span>
@@ -18,7 +18,7 @@ export default function Footer() {
           <br />
           <span
             className="cursor-pointer inline-block lg:hidden text-[10px] font-light hover:underline"
-            onClick={() => window.location.href = 'https://github.com/anas20023'}
+            onClick={() => window.location.href = 'https://www.facebook.com/remain52'}
           >
             Developed By Remain 52
           </span>
