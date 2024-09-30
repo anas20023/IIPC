@@ -1,65 +1,136 @@
-import { useState, useEffect } from 'react';
-import PT_Card from './PT_card';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AboutUs from './AboutUs';
 
-const PT = () => {
-    const [participants, setParticipants] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false); // Menu state
+    const [isDialogVisible, setIsDialogVisible] = useState(false); // About Us dialog visibility
+    const navigate = useNavigate(); // Initialize navigate function
 
-    useEffect(() => {
-        const fetchParticipants = async () => {
-            try {
-                const response = await fetch('https://iipc-5djy.vercel.app/api/participants');
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json();
-                setParticipants(data);
-            } catch (error) {
-                setError(error.message);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const handleClick = () => {
+        navigate('/'); // Navigate to the home route
+    };
 
-        fetchParticipants();
-    }, []);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
-    // Enhanced Loader with animation
-    if (loading) {
-        return (
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
-                <div className="flex flex-col items-center">
-                    <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-blue-500 border-solid"></div>
-                    <p className="text-blue-600 mt-4 text-lg font-semibold animate-pulse">
-                        Loading Participants...
-                    </p>
-                </div>
-            </div>
-        );
-    }
+    const openAboutUsDialog = () => {
+        setIsDialogVisible(true); // Show About Us dialog
+        setIsOpen(false); // Close the mobile menu if open
+    };
 
-    if (error) return <p className="text-red-500 text-center mt-10">Error: {error}</p>;
+    const closeAboutUsDialog = () => {
+        setIsDialogVisible(false); // Hide About Us dialog
+    };
 
     return (
         <>
-            <h1 className="text-center font-extrabold text-slate-800 text-3xl mt-6">
-                Participants
-            </h1>
-            <div className="p-6 bg-gray-100 min-h-screen flex flex-col items-center mt-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 max-w-7xl">
-                    {participants.map(participant => (
-                        <PT_Card
-                            key={participant.StudentID} // Ensure unique keys for React performance
-                            name={participant.Name}
-                            section={participant.Section}
-                            studentId={participant.StudentID}
-                            linkTo={"#"}
-                        />
-                    ))}
+            <nav className="relative w-full bg-white shadow-md">
+                <div className="flex justify-between items-center max-w-7xl w-11/12 mx-auto py-4">
+                    {/* Left section */}
+                    <h1
+                        className="text-3xl font-bold text-slate-800 cursor-pointer"
+                        onClick={handleClick}
+                    >
+                        IIPC <span className="text-blue-600">52</span>
+                    </h1>
+
+                    {/* Menu Button for Small Screens */}
+                    <button
+                        className="md:hidden text-slate-700 focus:outline-none"
+                        onClick={toggleMenu}
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-6 h-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M4 6h16M4 12h16m-7 6h7"
+                            />
+                        </svg>
+                    </button>
+
+                    {/* Menu Items for Large Screens */}
+                    <div className="hidden md:flex flex-row items-center space-x-4">
+                        <Link
+                            to="/"
+                            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
+                        >
+                            Home
+                        </Link>
+                        <button
+                            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
+                            onClick={openAboutUsDialog} // Open dialog on click
+                        >
+                            About us
+                        </button>
+                        <Link
+                            to="/Participant"
+                            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
+                        >
+                            Participants
+                        </Link>
+                        <Link
+                            to="/Volunteers"
+                            className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
+                        >
+                            Organizers
+                        </Link>
+                    </div>
                 </div>
-            </div>
+
+                {/* Floating Mobile Menu */}
+                <div
+                    className={`absolute top-16 right-0 w-48 bg-white shadow-lg rounded-lg ${isOpen ? 'block' : 'hidden'
+                        } md:hidden z-50`}
+                >
+                    <Link
+                        to="/"
+                        className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Home
+                    </Link>
+                    <button
+                        className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+                        onClick={openAboutUsDialog}
+                    >
+                        About us
+                    </button>
+                    <Link
+                        to="/Participant"
+                        className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Participants
+                    </Link>
+                    <Link
+                        to="/Volunteers"
+                        className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Organizers
+                    </Link>
+                </div>
+
+                {/* Overlay to close menu when clicking outside */}
+                {isOpen && (
+                    <div
+                        className="fixed inset-0 bg-black opacity-30 z-40"
+                        onClick={() => setIsOpen(false)}
+                    />
+                )}
+            </nav>
+
+            {/* About Us Dialog */}
+            <AboutUs visible={isDialogVisible} onClose={closeAboutUsDialog} />
         </>
     );
-};
-
-// eslint-disable-next-line react-refresh/only-export-components
-export default PT;
+}
