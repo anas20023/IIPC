@@ -1,6 +1,6 @@
 export default function Card({ img, name, Position, id, Section, sup, color }) {
   return (
-    <div className="flex flex-col lg:flex-row items-center border border-gray-200 lg:h-60 h-auto my-6 w-full max-w-5xl mx-auto rounded-lg shadow-lg bg-white hover:shadow-xl transition-all duration-300">
+    <div className="flex flex-col lg:flex-row items-center border border-gray-300 lg:h-60 h-auto my-6 w-full max-w-5xl mx-auto rounded-lg shadow-lg bg-white hover:shadow-xl transition-all duration-300 pl-6">
 
       {/* Image Section */}
       <div className="flex justify-center items-center w-full lg:w-1/3 p-4 lg:p-0">
