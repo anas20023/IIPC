@@ -20,7 +20,6 @@ const Winner = () => {
                         color={arr[0].color}
                     />
                 </div>
-
                 {/* Second and Third winners in a 2:2 layout with flex */}
                 <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-6xl gap-6">
                     {/* Second Winner */}
