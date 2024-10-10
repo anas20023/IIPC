@@ -105,7 +105,7 @@ const org = [
       "https://i.ibb.co.com/qRwq83K/image.png",
   },
   {
-    name: "Ratul Sikdar",
+    name: "Ratul Hossain Sadi",
     positon: "Distribution Team",
     section: "05",
     image:
