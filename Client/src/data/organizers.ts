@@ -32,105 +32,105 @@ const org = [
     positon: "Media Team",
     section: "10",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/9T3MpR3/Screenshot-2024-03-18-034009.png",
   },
   {
     name: "Abid Hasan Refat",
     positon: "Media Team",
     section: "10",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/KqM3zsG/Screenshot-2024-03-18-033652.png",
   },
   {
     name: "Miel Mahmud Sifat",
     positon: "Monitoring Team",
     section: "10",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/Sy8bRhG/image.png",
   },
   {
     name: "Shahariar Shikdar Ovi",
     positon: "Monitoring Team",
     section: "02",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/NgqGP8N/Screenshot-2024-03-18-031428.png",
   },
   {
     name: "Abrar Ahmed Chowdhury",
     positon: "Monitoring Team",
     section: "09",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/H4kDTbH/image.png",
   },
   {
     name: "Bani Sarkar",
     positon: "Distribution Team",
     section: "02",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/TmMFZfD/image.png",
   },
   {
     name: "Israt Jahan Hridita",
     positon: "Distribution Team",
     section: "04",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/M2R7PgL/image.png",
   },
   {
     name: "Kaniz Fatema Sadia",
     positon: "Distribution Team",
     section: "10",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/frdFsv9/Screenshot-2024-03-19-152341.png",
   },
   {
     name: "Medha Chaki",
     positon: "Distribution Team",
     section: "02",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/qF7NSxf/image.png",
   },
   {
     name: "Arif Ishtiak Nabil",
     positon: "Distribution Team",
     section: "10",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/6wZSMsr/image.png",
   },
   {
     name: "Abdullah Al Kaiyum",
     positon: "Distribution Team",
     section: "02",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/qRwq83K/image.png",
   },
   {
     name: "Ratul Sikdar",
     positon: "Distribution Team",
     section: "05",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/f4GZc0X/Screenshot-2024-03-18-035156.png",
   },
   {
     name: "Mohammad Zunayed",
     positon: "Lab Management Team",
     section: "09",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/LhLMzt8/image.png",
   },
   {
     name: "Tanvir Niloy",
     positon: "Lab Management Team",
     section: "03",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/XJwXzZM/Screenshot-2024-03-18-123822.png",
   },
   {
     name: "Foysal Hossain",
     positon: "Lab Management Team",
     section: "09",
     image:
-      "https://tgihost.pages.dev/image?id=BQACAgUAAx0EfBziBwACATll-SzuezfN7QhykeJjZ2JLMhbwTgACiw8AAsBW0VcExJm1B0orDzQE",
+      "https://i.ibb.co.com/3TqQ1Cs/Screenshot-2024-03-18-124840.png",
   },
 ];
 export default org;
