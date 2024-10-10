@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import AboutUs from './AboutUs';
+import ImageSlider from './ImageSlider'; // Import the ImageSlider component
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // Menu state
-  const [isDialogVisible, setIsDialogVisible] = useState(false); // About Us dialog visibility
+  const [isDialogVisible, setIsDialogVisible] = useState(false); // Gallery dialog visibility
   const navigate = useNavigate(); // Initialize navigate function
 
   const handleClick = () => {
@@ -15,13 +15,13 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const openAboutUsDialog = () => {
-    setIsDialogVisible(true); // Show About Us dialog
+  const openGalleryDialog = () => {
+    setIsDialogVisible(true); // Show Gallery dialog
     setIsOpen(false); // Close the mobile menu if open
   };
 
-  const closeAboutUsDialog = () => {
-    setIsDialogVisible(false); // Hide About Us dialog
+  const closeGalleryDialog = () => {
+    setIsDialogVisible(false); // Close the gallery dialog
   };
 
   return (
@@ -67,9 +67,9 @@ export default function Navbar() {
             </Link>
             <button
               className="text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 rounded transition-all"
-              onClick={openAboutUsDialog} // Open dialog on click
+              onClick={openGalleryDialog} // Open dialog on click
             >
-              About us
+              Gallery
             </button>
             <Link
               to="/Participant"
@@ -100,9 +100,9 @@ export default function Navbar() {
           </Link>
           <button
             className="block text-lg font-normal text-slate-700 hover:text-blue-600 px-4 py-2 transition-all"
-            onClick={openAboutUsDialog}
+            onClick={openGalleryDialog}
           >
-            About us
+            Gallery
           </button>
           <Link
             to="/Participant"
@@ -129,8 +129,10 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* About Us Dialog */}
-      <AboutUs visible={isDialogVisible} onClose={closeAboutUsDialog} />
+      {/* Background blur and Image Slider when dialog is visible */}
+      {isDialogVisible && (
+        <ImageSlider onClose={closeGalleryDialog} /> // Pass the close function as prop
+      )}
     </>
   );
 }
