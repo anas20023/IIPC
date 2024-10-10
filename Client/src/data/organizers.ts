@@ -35,7 +35,7 @@ const org = [
       "https://i.ibb.co.com/9T3MpR3/Screenshot-2024-03-18-034009.png",
   },
   {
-    name: "Abid Hasan Refat",
+    name: "Late Abid Hasan Refat",
     positon: "Media Team",
     section: "10",
     image:
