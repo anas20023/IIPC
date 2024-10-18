@@ -1,16 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config(); // To load environment variables from .env
+require("dotenv").config(); 
 
 const app = express();
-const port = 3000; // Port for your server
+const port = process.env.PORT || 3000; 
 
 // Middleware
 app.use(cors({
-  origin: '*'
+  origin: 'https://iipc.vercel.app' 
 }));
-app.use(express.json()); // For parsing JSON requests
+app.use(express.json()); 
 
 // Connect to MongoDB
 mongoose
