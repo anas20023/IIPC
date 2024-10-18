@@ -1,17 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+require("dotenv").config(); 
 
 const app = express();
 
 // Middleware
-app.use(
-  cors({
-    origin: "https://iipc.vercel.app", // Change to your frontend domain
-  })
-);
-app.use(express.json());
+app.use(cors({
+  origin: 'https://iipc.vercel.app' // Change to your frontend domain
+}));
+app.use(express.json()); 
 
 // Connect to MongoDB
 mongoose
