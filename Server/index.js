@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
-app.get("/api/participants", async (req, res) => {
+app.get("/participants", async (req, res) => {
   try {
     const users = await User.find().select("Name Section StudentID"); // Assuming you have a User model for the users collection
     const shuffledUsers = users.sort(() => 0.5 - Math.random());
