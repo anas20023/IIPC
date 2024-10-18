@@ -1,16 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config(); 
+require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3000; 
 
 // Middleware
-app.use(cors({
-  origin: 'https://iipc.vercel.app' 
-}));
-app.use(express.json()); 
+app.use(
+  cors({
+    origin: "https://iipc.vercel.app", // Change to your frontend domain
+  })
+);
+app.use(express.json());
 
 // Connect to MongoDB
 mongoose
@@ -20,8 +21,8 @@ mongoose
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
-// API endpoint to get all users
 
+// Define Schema and Model
 const userSchema = new mongoose.Schema({
   Name: String,
   Email: String,
@@ -37,19 +38,21 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
-app.get("/participants", async (req, res) => {
-  try {
-    const users = await User.find().select("Name Section StudentID"); // Assuming you have a User model for the users collection
-    const shuffledUsers = users.sort(() => 0.5 - Math.random());
 
+// API endpoint to get all users
+app.get("/api/participants", async (req, res) => {
+  try {
+    const users = await User.find().select("Name Section StudentID");
+    const shuffledUsers = users.sort(() => 0.5 - Math.random());
     res.json(shuffledUsers);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
-app.get('/',(req,res)=>{
-  res.send('Hello World!')
-})
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
+
+// Export the app to be used as a Vercel serverless function
+module.exports = app;
